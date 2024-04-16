@@ -71,11 +71,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL      &kp N1             &kp N2           &kp N3           &kp N4               &kp N5  &tog 1                                                             &mo 3          &kp N6  &kp N7               &kp N8            &kp N9            &kp N0         &kp MINUS
-&kp TAB        &kp Q              &kp W            &kp F            &kp P                &kp B   &none                                                              &none          &kp J   &kp L                &kp U             &kp Y             &kp SEMICOLON  &kp BSLH
-&kp BACKSPACE  &hml LEFT_SHIFT A  &hml LEFT_GUI R  &hml LEFT_ALT S  &hml LEFT_CONTROL T  &kp G   &none      &kp LCTRL           &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &hmr LEFT_CONTROL N  &hmr RIGHT_ALT E  &hmr RIGHT_GUI I  &kp O          &td_quote
-&kp ESCAPE     &kp Z              &kp X            &kp C            &kp D                &kp V                                  &kp HOME      &kp PG_UP                            &kp K   &kp H                &kp COMMA         &kp PERIOD        &kp SLASH      &kp ENTER
-&mo 2          &kp GRAVE          &kp CAPS         &kp LEFT         &mo 1                        &kp SPACE  &mt LEFT_SHIFT TAB  &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp RIGHT_GUI        &kp DOWN          &kp LBKT          &kp RBKT       &mo 2
+&kp EQUAL      &kp N1             &kp N2           &kp N3           &kp N4               &kp N5  &tog 1                                                             &mo 3          &kp N6  &kp N7               &kp N8            &kp N9            &kp N0              &kp MINUS
+&kp TAB        &kp Q              &kp W            &kp F            &kp P                &kp B   &none                                                              &none          &kp J   &kp L                &kp U             &kp Y             &kp SEMICOLON       &kp BSLH
+&kp BACKSPACE  &hml LEFT_SHIFT A  &hml LEFT_GUI R  &hml LEFT_ALT S  &hml LEFT_CONTROL T  &kp G   &none      &kp LCTRL           &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &hmr LEFT_CONTROL N  &hmr RIGHT_ALT E  &hmr RIGHT_GUI I  &hmr RIGHT_SHIFT O  &td_quote
+&kp ESCAPE     &kp Z              &kp X            &kp C            &kp D                &kp V                                  &kp HOME      &kp PG_UP                            &kp K   &kp H                &kp COMMA         &kp PERIOD        &kp SLASH           &kp ENTER
+&mo 2          &kp GRAVE          &kp CAPS         &kp LEFT         &mo 1                        &kp SPACE  &mt LEFT_SHIFT TAB  &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp RIGHT_GUI        &kp DOWN          &kp LBKT          &kp RBKT            &mo 2
             >;
         };
 
