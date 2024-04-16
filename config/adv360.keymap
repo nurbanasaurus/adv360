@@ -28,6 +28,39 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
+        };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75>;
+        };
+
+        td_quote: td_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QUOTE";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp LS(SQT)>;
+        };
     };
 
     macros {
@@ -38,21 +71,21 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1              &kp N2          &kp N3          &kp N4              &kp N5  &tog 1                                                             &mo 3          &kp N6  &kp N7         &kp N8     &kp N9                &kp N0                   &kp MINUS
-&kp TAB    &kp Q               &kp W           &kp F           &kp P               &kp B   &none                                                              &none          &kp J   &kp L          &kp U      &kp Y                 &kp SEMICOLON            &kp BSLH
-&kp ESC    &hm LEFT_GUI A      &kp R           &hm LEFT_ALT S  &hm LEFT_CONTROL T  &kp G   &none      &kp LCTRL           &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &kp N          &kp E      &kp I                 &kp O                    &kp SQT
-&kp LSHFT  &mt LEFT_CONTROL Z  &mt LEFT_ALT X  &kp C           &kp D               &kp V                                  &kp HOME      &kp PG_UP                            &kp K   &kp H          &kp COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_CONTROL SLASH  &kp RSHFT
-&mo 2      &kp GRAVE           &kp CAPS        &kp LEFT        &kp LEFT_GUI                &kp SPACE  &mt LEFT_SHIFT TAB  &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp RIGHT_GUI  &kp DOWN   &kp LBKT              &kp RBKT                 &mo 2
+&kp EQUAL      &kp N1             &kp N2           &kp N3           &kp N4               &kp N5  &tog 1                                                             &mo 3          &kp N6  &kp N7               &kp N8            &kp N9            &kp N0         &kp MINUS
+&kp TAB        &kp Q              &kp W            &kp F            &kp P                &kp B   &none                                                              &none          &kp J   &kp L                &kp U             &kp Y             &kp SEMICOLON  &kp BSLH
+&kp BACKSPACE  &hml LEFT_SHIFT A  &hml LEFT_GUI R  &hml LEFT_ALT S  &hml LEFT_CONTROL T  &kp G   &none      &kp LCTRL           &kp LALT      &kp LGUI   &kp RCTRL  &none          &kp M   &hmr LEFT_CONTROL N  &hmr RIGHT_ALT E  &hmr RIGHT_GUI I  &kp O          &td_quote
+&kp ESCAPE     &kp Z              &kp X            &kp C            &kp D                &kp V                                  &kp HOME      &kp PG_UP                            &kp K   &kp H                &kp COMMA         &kp PERIOD        &kp SLASH      &kp ENTER
+&mo 2          &kp GRAVE          &kp CAPS         &kp LEFT         &mo 1                        &kp SPACE  &mt LEFT_SHIFT TAB  &kp END       &kp PG_DN  &kp ENTER  &kp BACKSPACE          &kp RIGHT_GUI        &kp DOWN          &kp LBKT          &kp RBKT       &mo 2
             >;
         };
 
         keypad {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 3      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
+&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4  &kp N5  &trans                                                   &mo 3      &kp N6          &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+&kp TAB    &kp Q      &kp W     &kp E     &kp R   &kp T   &none                                                    &none      &kp Y           &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
+&kp ESC    &kp A      &kp S     &kp D     &kp F   &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H           &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
+&kp LSHFT  &kp Z      &kp X     &kp C     &kp V   &kp B                        &kp HOME      &kp PG_UP                        &kp KP_NUMLOCK  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
+&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &trans          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                  &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
             >;
         };
 
