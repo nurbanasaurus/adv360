@@ -90,6 +90,14 @@
             tapping-term-ms = <300>;
             bindings = <&kp BACKSLASH>, <&kp LS(BACKSLASH)>;
         };
+
+        td_dash: td_dash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DASH";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp MINUS>, <&kp LS(MINUS)>;
+        };
     };
 
     macros {
@@ -119,7 +127,7 @@
 
         default {
             bindings = <
-&kp EQUAL      &kp N1             &kp N2           &kp N3           &kp N4               &kp N5  &trans                                                                     &mo 3                  &kp N6  &kp N7               &kp N8            &kp N9            &kp N0              &kp MINUS
+&kp EQUAL      &kp N1             &kp N2           &kp N3           &kp N4               &kp N5  &trans                                                                     &mo 3                  &kp N6  &kp N7               &kp N8            &kp N9            &kp N0              &td_dash
 &kp TAB        &kp Q              &kp W            &kp F            &kp P                &kp B   &none                                                                      &none                  &kp J   &kp L                &kp U             &kp Y             &kp SEMICOLON       &td_bslash
 &kp BACKSPACE  &hml LEFT_SHIFT A  &hml LEFT_GUI R  &hml LEFT_ALT S  &hml LEFT_CONTROL T  &kp G   &none              &kp LA(SPACE)       &kp LALT      &kp LGUI   &kp RCTRL  &none                  &kp M   &hmr LEFT_CONTROL N  &hmr RIGHT_ALT E  &hmr RIGHT_GUI I  &hmr RIGHT_SHIFT O  &td_quote
 &kp ESCAPE     &kp Z              &kp X            &kp C            &kp D                &kp V                                          &kp HOME      &kp PG_UP                                    &kp K   &kp H                &kp COMMA         &kp PERIOD        &kp SLASH           &kp ENTER
@@ -129,21 +137,21 @@
 
         keypad {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4  &kp N5  &trans                                                 &mo 3      &kp N6          &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R   &kp T   &none                                                  &none      &kp Y           &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F   &kp G   &none   &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H           &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V   &kp B                      &kp HOME      &kp PG_UP                        &kp KP_NUMLOCK  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &trans          &trans  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                  &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
+&none  &none                         &none              &none                 &none                  &none      &trans                                      &none      &none  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY           &none
+&none  &none                         &none              &none                 &none                  &none      &none                                       &none      &none  &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS              &none
+&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none      &none   &none  &none      &none  &none      &none      &none  &kp KP_N4   &kp KP_N5     &kp KP_N6      &hml RIGHT_SHIFT KP_PLUS  &none
+&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &td_dash              &td_bslash             &kp GRAVE                 &none      &none                        &none  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER              &none
+&none  &none                         &none              &none                 &trans                            &trans  &none  &none      &none  &kp EQUAL  &kp KP_N0         &none       &none         &kp KP_DOT     &none                     &none
             >;
         };
 
         fn {
             bindings = <
-&kp F1  &kp F2                &kp F3                 &kp F4            &kp F5             &kp F6  &tog 1                                      &mo 3   &kp F7    &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
-&trans  &trans                &trans                 &trans            &trans             &trans  &none                                       &none   &trans    &trans    &trans        &trans     &trans   &trans
-&trans  &trans                &td_bslash             &kp LS(N9)        &kp LS(N0)         &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans  &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans                  &trans      &trans                  &trans    &trans    &trans        &trans     &trans   &trans
-&trans  &trans                &trans                 &trans            &trans                     &trans  &trans  &trans      &trans  &trans  &trans            &trans    &trans        &trans     &trans   &trans
+&kp F1  &kp F2  &kp F3      &kp F4  &kp F5  &kp F6  &none                                       &none   &kp F7    &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
+&trans  &trans  &trans      &trans  &trans  &trans  &none                                       &none   &trans    &trans    &trans        &trans     &trans   &trans
+&trans  &trans  &td_bslash  &none   &none   &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans   &trans
+&trans  &none   &none       &none   &none   &none                   &trans      &trans                  &trans    &trans    &trans        &trans     &trans   &trans
+&trans  &trans  &trans      &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans            &trans    &trans        &trans     &trans   &trans
             >;
         };
 
