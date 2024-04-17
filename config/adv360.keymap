@@ -120,6 +120,16 @@
             bindings = <&kp LS(MINUS)>;
             key-positions = <18 23>;
         };
+
+        lshift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <29 30>;
+        };
+
+        rshift {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <44 43>;
+        };
     };
 
     keymap {
