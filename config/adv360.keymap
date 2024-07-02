@@ -122,33 +122,6 @@
             tapping-term-ms = <180>;
             bindings = <&kp SLASH>, <&kp QUESTION>;
         };
-
-        mm_vima: mm_vima {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_VIMA";
-            bindings = <&kp A>;
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-            keep-mods = <(MOD_LCTL)>;
-        };
-
-        mm_cleft: mm_cleft {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_CLEFT";
-            bindings = <&kp LEFT_ARROW>, <&none>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
-
-        mm_cright: mm_cright {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_CRIGHT";
-            bindings = <&kp RIGHT_ARROW>, <&none>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
     };
 
     macros {
