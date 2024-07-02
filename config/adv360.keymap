@@ -198,11 +198,11 @@
 
         keypad {
             bindings = <
-&none  &none                         &none              &none                 &none                  &none       &trans                                             &none             &none           &none           &none         &none            &none      &none
-&none  &none                         &none              &none                 &none                  &none       &none                                              &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &td_quote  &none
-&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash  &kp LESS_THAN  &none  &none      &none  &none      &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
-&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE                         &none      &none                               &none           &none           &none         &none            &none      &none
-&none  &none                         &none              &none                 &trans                             &trans         &none  &none      &none  &kp EQUAL  &kp KP_N0                         &none           &none         &none            &none      &none
+&none  &none           &none            &none                 &none                  &none        &trans                                         &none             &none           &none           &none         &none            &none      &none
+&none  &kp EXCL        &kp AT_SIGN      &kp HASH              &kp DOLLAR             &kp PERCENT  &none                                          &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &kp COLON  &none
+&none  &none           &kp TILDE        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash   &kp LESS_THAN  &none  &none      &none  &none  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
+&none  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none                              &none      &none                           &none           &none           &none         &none            &none      &none
+&none  &none           &none            &none                 &trans                              &trans         &none  &none      &none  &mo 3  &none                             &kp TAB         &none         &none            &none      &none
             >;
         };
 
@@ -212,7 +212,7 @@
 &trans  &trans  &trans      &trans  &trans  &trans  &none                                               &none      &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none    &trans
 &trans  &trans  &td_bslash  &none   &none   &trans  &none   &trans  &trans      &trans  &kp KP_NUMLOCK  &kp EQUAL  &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans   &trans
 &trans  &none   &none       &none   &none   &none                   &trans      &trans                             &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans   &trans
-&trans  &trans  &trans      &trans  &trans          &trans  &trans  &trans      &trans  &trans          &trans                      &td_dash         &kp PERIOD       &kp SLASH        &trans   &trans
+&trans  &trans  &trans      &trans  &trans          &trans  &mo 3   &trans      &trans  &trans          &trans                      &td_dash         &kp PERIOD       &kp SLASH        &trans   &trans
             >;
         };
 
