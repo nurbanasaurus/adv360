@@ -122,6 +122,33 @@
             tapping-term-ms = <180>;
             bindings = <&kp SLASH>, <&kp QUESTION>;
         };
+
+        mm_vima: mm_vima {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_VIMA";
+            bindings = <&kp A>;
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
+
+        mm_cleft: mm_cleft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CLEFT";
+            bindings = <&kp LEFT_ARROW>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mm_cright: mm_cright {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CRIGHT";
+            bindings = <&kp RIGHT_ARROW>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -161,21 +188,21 @@
 
         default {
             bindings = <
-&none           &none             &none         &none   &none      &none  &trans                                                                                     &none           &none  &none     &none      &none       &none      &none
-&kp TAB         &kp Q             &kp W         &kp F   &kp P      &kp B  &none                                                                                      &none           &kp J  &kp L     &kp U      &kp Y       &td_colon  &none
-&kp CAPSLOCK    &kp A             &kp R         &kp S   &kp T      &kp G  &none           &kp LA(SPACE)      &kp TAB           &kp PAGE_UP    &none                  &none           &kp M  &kp N     &kp E      &kp I       &kp O      &none
-&kp LEFT_SHIFT  &kp Z             &kp X         &kp C   &kp D      &kp V                                     &kp LEFT_GUI      &kp PAGE_DOWN                                         &kp K  &kp H     &kp COMMA  &kp PERIOD  &td_slash  &kp ENTER
-&none           &kp LEFT_CONTROL  &kp LEFT_ALT  &trans  &kp GLOBE         &kp LEFT_SHIFT  &layer_kp 1 SPACE  &kp HOME          &kp END        &layer_kp 2 BACKSPACE  &kp LEFT_SHIFT         &td_dash  &none      &none       &none      &none
+&none           &none             &none         &none   &none      &none  &trans                                                                                     &none           &none  &none     &none      &none          &none              &none
+&kp TAB         &kp Q             &kp W         &kp F   &kp P      &kp B  &none                                                                                      &none           &kp J  &kp L     &kp U      &kp Y          &td_colon          &none
+&kp CAPSLOCK    &kp A             &kp R         &kp S   &kp T      &kp G  &mm_vima        &kp LA(SPACE)      &kp TAB           &kp PAGE_UP    &none                  &none           &kp M  &kp N     &kp E      &kp I          &kp O              &none
+&kp LEFT_SHIFT  &kp Z             &kp X         &kp C   &kp D      &kp V                                     &kp LEFT_GUI      &kp PAGE_DOWN                                         &kp K  &kp H     &kp COMMA  &kp PERIOD     &td_slash          &kp ENTER
+&mm_cleft       &kp LEFT_CONTROL  &kp LEFT_ALT  &trans  &kp GLOBE         &kp LEFT_SHIFT  &layer_kp 1 SPACE  &kp HOME          &kp END        &layer_kp 2 BACKSPACE  &kp LEFT_SHIFT         &td_dash  &none      &kp RIGHT_ALT  &kp RIGHT_CONTROL  &mm_cright
             >;
         };
 
         keypad {
             bindings = <
-&none  &none                         &none              &none                 &none                  &none       &trans                                      &none      &none           &none           &none         &none            &none      &none
-&none  &none                         &none              &none                 &none                  &none       &none                                       &none      &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &td_quote  &none
-&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash  &none   &none  &none      &none  &none      &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
-&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE                  &none      &none                        &none           &none           &none         &none            &none      &none
-&none  &none                         &none              &none                 &trans                             &trans  &none  &none      &none  &kp EQUAL  &kp KP_N0                  &none           &none         &none            &none      &none
+&none  &none                         &none              &none                 &none                  &none       &trans                                             &none             &none           &none           &none         &none            &none      &none
+&none  &none                         &none              &none                 &none                  &none       &none                                              &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &td_quote  &none
+&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash  &kp LESS_THAN  &none  &none      &none  &none      &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
+&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE                         &none      &none                               &none           &none           &none         &none            &none      &none
+&none  &none                         &none              &none                 &trans                             &trans         &none  &none      &none  &kp EQUAL  &kp KP_N0                         &none           &none         &none            &none      &none
             >;
         };
 
