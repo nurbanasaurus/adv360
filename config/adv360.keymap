@@ -105,6 +105,23 @@
             #binding-cells = <0>;
             bindings = <&kp A>, <&kp LG(BACKSPACE)>;
         };
+
+        td_colon: td_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp COLON>;
+
+            tapping-term-ms = <180>;
+        };
+
+        td_slash: td_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASH";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp SLASH>, <&kp QUESTION>;
+        };
     };
 
     macros {
@@ -144,31 +161,31 @@
 
         default {
             bindings = <
-&kp EQUAL      &kp N1     &kp N2           &kp N3           &kp N4               &kp N5  &trans                                                                                 &mo 3                  &kp N6  &kp N7               &kp N8            &kp N9            &kp N0              &td_dash
-&kp TAB        &kp Q      &kp W            &kp F            &kp P                &kp B   &none                                                                                  &none                  &kp J   &kp L                &kp U             &kp Y             &kp SEMICOLON       &td_bslash
-&kp BACKSPACE  &bs_cmdbs  &hml LEFT_GUI R  &hml LEFT_ALT S  &hml LEFT_CONTROL T  &kp G   &none              &kp LA(SPACE)       &kp LALT      &kp LGUI   &kp RCTRL              &none                  &kp M   &hmr LEFT_CONTROL N  &hmr RIGHT_ALT E  &hmr RIGHT_GUI I  &hmr RIGHT_SHIFT O  &td_quote
-&kp ESCAPE     &kp Z      &kp X            &kp C            &kp D                &kp V                                          &kp HOME      &kp PG_UP                                                &kp K   &kp H                &kp COMMA         &kp PERIOD        &kp SLASH           &kp ENTER
-&mo 4          &kp GRAVE  &kp CAPS         &trans           &mo 2                        &layer_kp 1 SPACE  &mt LEFT_SHIFT TAB  &kp END       &kp PG_DN  &mt RIGHT_SHIFT ENTER  &layer_kp 3 BACKSPACE          &caps_word           &trans            &kp LBKT          &kp RBKT            &mo 4
+&none           &none             &none         &none   &none      &none  &trans                                                                                     &none           &none  &none     &none      &none       &none      &none
+&kp TAB         &kp Q             &kp W         &kp F   &kp P      &kp B  &none                                                                                      &none           &kp J  &kp L     &kp U      &kp Y       &td_colon  &none
+&kp CAPSLOCK    &kp A             &kp R         &kp S   &kp T      &kp G  &none           &kp LA(SPACE)      &kp TAB           &kp PAGE_UP    &none                  &none           &kp M  &kp N     &kp E      &kp I       &kp O      &none
+&kp LEFT_SHIFT  &kp Z             &kp X         &kp C   &kp D      &kp V                                     &kp LEFT_GUI      &kp PAGE_DOWN                                         &kp K  &kp H     &kp COMMA  &kp PERIOD  &td_slash  &kp ENTER
+&none           &kp LEFT_CONTROL  &kp LEFT_ALT  &trans  &kp GLOBE         &kp LEFT_SHIFT  &layer_kp 1 SPACE  &kp HOME          &kp END        &layer_kp 2 BACKSPACE  &kp LEFT_SHIFT         &td_dash  &none      &none       &none      &none
             >;
         };
 
         keypad {
             bindings = <
-&none  &none                         &none              &none                 &none                  &none      &trans                                      &none      &none  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY           &none
-&none  &none                         &none              &none                 &none                  &none      &none                                       &none      &none  &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS              &none
-&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none      &none   &none  &none      &none  &none      &none      &none  &kp KP_N4   &kp KP_N5     &kp KP_N6      &hml RIGHT_SHIFT KP_PLUS  &none
-&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &td_dash              &td_bslash             &kp GRAVE                 &none      &none                        &none  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER              &none
-&none  &none                         &none              &none                 &trans                            &trans  &none  &none      &none  &kp EQUAL  &kp KP_N0         &none       &none         &kp KP_DOT     &none                     &none
+&none  &none                         &none              &none                 &none                  &none       &trans                                      &none      &none           &none           &none         &none            &none      &none
+&none  &none                         &none              &none                 &none                  &none       &none                                       &none      &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &td_quote  &none
+&none  &hml LEFT_SHIFT LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash  &none   &none  &none      &none  &none      &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
+&none  &kp LEFT_BRACE                &kp RIGHT_BRACE    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE                  &none      &none                        &none           &none           &none         &none            &none      &none
+&none  &none                         &none              &none                 &trans                             &trans  &none  &none      &none  &kp EQUAL  &kp KP_N0                  &none           &none         &none            &none      &none
             >;
         };
 
         fn {
             bindings = <
-&kp F1  &kp F2  &kp F3      &kp F4  &kp F5  &kp F6  &none                                       &none   &kp F7    &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
-&trans  &trans  &trans      &trans  &trans  &trans  &none                                       &none   &trans    &trans    &trans        &trans     &trans   &trans
-&trans  &trans  &td_bslash  &none   &none   &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans  &none   &none       &none   &none   &none                   &trans      &trans                  &trans    &trans    &trans        &trans     &trans   &trans
-&trans  &trans  &trans      &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans            &trans    &trans        &trans     &trans   &trans
+&kp F1  &kp F2  &kp F3      &kp F4  &kp F5  &kp F6  &none                                               &none      &kp F7           &kp F8           &kp F9           &kp F10          &kp F11  &kp F12
+&trans  &trans  &trans      &trans  &trans  &trans  &none                                               &none      &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none    &trans
+&trans  &trans  &td_bslash  &none   &none   &trans  &none   &trans  &trans      &trans  &kp KP_NUMLOCK  &kp EQUAL  &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans   &trans
+&trans  &none   &none       &none   &none   &none                   &trans      &trans                             &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans   &trans
+&trans  &trans  &trans      &trans  &trans          &trans  &trans  &trans      &trans  &trans          &trans                      &td_dash         &kp PERIOD       &kp SLASH        &trans   &trans
             >;
         };
 
@@ -179,16 +196,6 @@
 &none       &none         &none         &none         &none         &none         &none        &none  &none      &none  &none  &none        &kp LEFT  &kp DOWN    &kp UP_ARROW  &kp RIGHT  &none  &none
 &none       &none         &none         &none         &macro_ver    &none                             &none      &none                      &none     &none       &none         &none      &none  &none
 &none       &none         &none         &none         &none                       &none        &none  &none      &none  &none  &trans                 &bl BL_INC  &bl BL_DEC    &none      &none  &none
-            >;
-        };
-
-        app {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
