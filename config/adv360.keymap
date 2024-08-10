@@ -34,11 +34,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
-            hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
+            hold-while-undecided;
         };
 
         hmr: hmr {
@@ -47,11 +47,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             hold-trigger-on-release;
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75>;
+            hold-while-undecided;
         };
 
         td_quote: td_quote {
@@ -161,25 +162,25 @@
 
         default {
             bindings = <
-&none           &none             &none         &none      &none      &none  &trans                                                                   &kp PAGE_DOWN    &none  &none     &none      &none          &none              &none
-&kp TAB         &kp Q             &kp W         &kp F      &kp P      &kp B  &none                                                                    &kp PAGE_DOWN    &kp J  &kp L     &kp U      &kp Y          &td_colon          &none
-&kp CAPSLOCK    &kp A             &kp R         &kp S      &kp T      &kp G  &kp ESCAPE      &kp LA(SPACE)      &none             &none    &none      &none            &kp M  &kp N     &kp E      &kp I          &kp O              &none
-&kp LEFT_SHIFT  &kp Z             &kp X         &kp C      &kp D      &kp V                                     &kp LEFT_GUI      &kp TAB                              &kp K  &kp H     &kp COMMA  &kp PERIOD     &td_slash          &none
-&none           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp GLOBE  &kp GLOBE         &kp LEFT_SHIFT  &layer_kp 1 SPACE  &kp HOME          &kp END  &kp ENTER  &lt 2 BACKSPACE         &td_dash  &none      &kp RIGHT_ALT  &kp RIGHT_CONTROL  &none
+&none           &none              &none            &none                &none            &none                          &trans                                                                  &kp PAGE_DOWN    &none                          &none            &none                &none             &none               &none
+&none           &kp Q              &kp W            &kp F                &kp P            &kp B                          &none                                                                   &kp PAGE_DOWN    &kp J                          &kp L            &kp U                &kp Y             &td_colon           &none
+&none           &hml LEFT_SHIFT A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_GUI T  &hml LA(LC(LG(LEFT_SHIFT))) G  &kp ESCAPE         &kp LA(SPACE)     &none          &none    &none      &none            &hmr LA(LC(LG(LEFT_SHIFT))) M  &hmr LEFT_GUI N  &hmr LEFT_CONTROL E  &hmr RIGHT_ALT I  &hmr RIGHT_SHIFT O  &none
+&kp LEFT_SHIFT  &kp Z              &kp X            &kp C                &kp D            &kp V                                                               &kp HOME       &kp END                              &kp K                          &kp H            &kp COMMA            &kp PERIOD        &td_slash           &none
+&none           &none              &none            &none                &none                                           &layer_kp 1 SPACE  &mt LEFT_GUI TAB  &kp GLOBE      &none    &kp ENTER  &lt 2 BACKSPACE                                 &none            &none                &none             &none               &none
             >;
         };
 
-        keypad {
+        lower {
             bindings = <
 &none  &none           &none            &none                 &none                  &none        &trans                                         &none             &none           &none           &none         &none            &none      &none
-&none  &kp EXCL        &kp AT_SIGN      &kp HASH              &kp DOLLAR             &kp PERCENT  &none                                          &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &kp COLON  &none
-&none  &none           &kp TILDE        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_bslash   &kp LESS_THAN  &none  &none      &none  &none  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
+&none  &kp EXCL        &kp AT_SIGN      &kp HASH              &kp DOLLAR             &kp PERCENT  &none                                          &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &kp TILDE  &none
+&none  &td_bslash      &td_dash         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none        &kp LESS_THAN  &none  &none      &none  &none  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
 &none  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none                              &none      &none                           &none           &none           &none         &none            &none      &none
 &none  &none           &none            &none                 &trans                              &trans         &none  &none      &none  &mo 3  &none                             &kp TAB         &none         &none            &none      &none
             >;
         };
 
-        fn {
+        upper {
             bindings = <
 &kp F1  &kp F2  &kp F3      &kp F4  &kp F5  &kp F6  &none                                               &none      &kp F7           &kp F8           &kp F9           &kp F10          &kp F11  &kp F12
 &trans  &trans  &trans      &trans  &trans  &trans  &none                                               &none      &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none    &trans
