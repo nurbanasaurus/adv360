@@ -181,7 +181,7 @@
             bindings = <
 &none  &none           &none            &none                 &none                  &none        &trans                                         &none             &none           &none           &none         &none            &none      &none
 &none  &kp EXCL        &kp AT_SIGN      &kp HASH              &kp DOLLAR             &kp PERCENT  &none                                          &none             &kp CARET       &kp AMPERSAND   &kp STAR      &kp GRAVE        &kp TILDE  &none
-&none  &td_bslash      &td_dash         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none        &kp LESS_THAN  &none  &none      &none  &none  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
+&none  &td_bslash      &td_dash         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &td_colon    &kp LESS_THAN  &none  &none      &none  &none  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &td_quote  &none
 &none  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none                              &none      &none                           &none           &none           &none         &none            &none      &none
 &none  &none           &none            &none                 &trans                              &trans         &none  &none      &none  &mo 3  &none                             &kp TAB         &none         &none            &none      &none
             >;
