@@ -66,7 +66,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_QUOTE";
             #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp LS(SQT)>;
+            bindings = <&kp SQT>, <&kp DOUBLE_QUOTES>;
         };
 
         td_backspace: td_backspace {
